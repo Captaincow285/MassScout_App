@@ -3,6 +3,10 @@ import org.apache.poi.hssf.*;
 import javafx.*;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
+import java.io.FileInputStream;
+import java.io.File;
+import java.io.File.*;
 @SuppressWarnings("unused")
 
 public class main {
@@ -33,18 +37,60 @@ public class main {
 		appSelection.getContentPane().add(option1);
 		
 		//Action...?
-		SubmitAction plhdr = new SubmitAction("Submit");
+		SubmitAction submit = new SubmitAction("Submit");
 		
 		//Submit Button
 		JButton submitB = new JButton("Submit");
 		submitB.setBounds(250, 180, 100, 30);
 		appSelection.getContentPane().add(submitB);
 		
-		//Action Listener
-		submitB.addActionListener(plhdr);
-		
 		//Final validate and set Visible
 		appSelection.setVisible(true);
 		
+		
+		while(true)
+		{
+			//Holds application in place before button is pressed
+			while(!submit.hasButtonBeenClicked())
+			{
+				submitB.addActionListener(submit);
+			}
+			
+			//Resets the button
+			submit.setClickedFalse();
+			
+			//Checks for Index
+			int dropdownIndex = option1.getSelectedIndex();
+			
+			if(submit.hasButtonBeenClicked())
+			{
+				//Picks index items
+				if(dropdownIndex == 0)
+				{
+					
+				}
+				else if(dropdownIndex == 1)
+				{
+					
+				}
+				else if(dropdownIndex == 2)
+				{
+					
+				}
+				else if(dropdownIndex == 3)
+				{
+					LoadSheet plhdr = new LoadSheet();
+					plhdr.sheetUI();
+				}
+				else if(dropdownIndex == 4)
+				{
+					
+				}
+				else if(dropdownIndex == 5)
+				{
+					appSelection.dispatchEvent(new WindowEvent(appSelection, WindowEvent.WINDOW_CLOSING));
+				}
+			}
+		}
 	}
 }

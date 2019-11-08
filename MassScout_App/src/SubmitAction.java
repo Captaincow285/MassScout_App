@@ -3,6 +3,8 @@ import javax.swing.AbstractAction;
 
 public class SubmitAction extends AbstractAction
 {
+	private boolean buttonClicked = false;
+	
 	public SubmitAction(String text)
 	{
 		super(text);
@@ -11,7 +13,16 @@ public class SubmitAction extends AbstractAction
 	@Override
 	public void actionPerformed(ActionEvent plhdr) 
 	{
-		
-		
+		buttonClicked = true;
+	}
+	
+	public boolean hasButtonBeenClicked()
+	{
+		return buttonClicked;
+	}
+	
+	public void setClickedFalse()
+	{
+		buttonClicked = false;
 	}
 }
