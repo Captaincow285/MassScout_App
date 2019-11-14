@@ -2,14 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/poi-4.1.1/poi-4.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1-tests.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1-test-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-math3-3.6.1/commons-math3-3.6.1-tools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
