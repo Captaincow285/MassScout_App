@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.File;
 import java.io.File.*;
 @SuppressWarnings("unused")
@@ -79,8 +80,8 @@ public class main {
 				}
 				else if(dropdownIndex == 3)
 				{
-					LoadSheet plhdr = new LoadSheet();
-					plhdr.sheetUI();
+					LoadSheet loading = new LoadSheet();
+					loading.sheetUI();
 				}
 				else if(dropdownIndex == 4)
 				{
