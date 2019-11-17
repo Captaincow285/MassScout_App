@@ -9,5 +9,8 @@
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/xmlbeans-3.1.0/lib/resolver.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/xmlbeans-3.1.0/lib/xmlbeans-3.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-collections4-4.4/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-compress-1.19/commons-compress-1.19.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-compress-1.19/commons-compress-1.19-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-collections4-4.4/commons-collections4-4.4-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
