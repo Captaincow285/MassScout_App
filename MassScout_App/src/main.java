@@ -81,7 +81,7 @@ public class main {
 				else if(dropdownIndex == 3)
 				{
 					LoadSheet loading = new LoadSheet();
-					loading.sheetUI();
+					loading.makeSheet(loading.sheetUI());
 				}
 				else if(dropdownIndex == 4)
 				{

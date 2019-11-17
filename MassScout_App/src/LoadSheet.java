@@ -1,8 +1,9 @@
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.poifs.filesystem.POIFSFileSystem;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JButton;
@@ -15,17 +16,12 @@ public class LoadSheet
 	private JTextField instructionsCont;
 	private JButton submitB;
 	
-	public LoadSheet()
-	{
-		
-	}
-	
 	/**
 	 * @throws IOException 
 	 * @wbp.parser.entryPoint
 	 */
 	@SuppressWarnings({ "unused" , "resource" })
-	public void sheetUI()
+	public String sheetUI()
 	{
 		//New window
 		JFrame window = new JFrame();
@@ -69,18 +65,26 @@ public class LoadSheet
 		
 		//Converts textbox input to full Spreadsheet object
 		String filePath = directEntry.getText();
-		File sheetPath = new File(filePath);
+		window.dispose();
+		return filePath;
+	}
+	
+	public void makeSheet(String filePath)
+	{
 		
-		try
+		File sheetPath = new File(filePath);
+		try 
 		{
-			POIFSFileSystem POIPath = new POIFSFileSystem(sheetPath);
+			XSSFWorkbook plhdr = new XSSFWorkbook(sheetPath);
 		} 
-		catch (IOException e) 
+		catch (InvalidFormatException e) 
 		{
-			e.printStackTrace();
+			
+		} 
+		catch (IOException e)
+		{
+			
 		}
 		
-		//Closes window
-		window.dispose();
 	}
 }
