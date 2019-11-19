@@ -3,9 +3,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.IOException;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class LoadSheet 
@@ -15,6 +15,8 @@ public class LoadSheet
 	private JTextField instructions;
 	private JTextField instructionsCont;
 	private JButton submitB;
+	
+	public static XSSFWorkbook sheet;
 	
 	/**
 	 * @throws IOException 
@@ -28,6 +30,10 @@ public class LoadSheet
 		window.setSize(300, 200);
 		window.getContentPane().setLayout(null);
 		window.setLocationRelativeTo(null);
+		
+		//Application Icon
+		ImageIcon logo = new ImageIcon("C:\\Users\\Captaincow285\\git\\MassScout_App\\MassScout_App\\img\\Logo.png");
+		window.setIconImage(logo.getImage());
 		
 		//The entry field. Editable
 		directEntry = new JTextField();
@@ -75,7 +81,7 @@ public class LoadSheet
 		File sheetPath = new File(filePath);
 		try 
 		{
-			XSSFWorkbook plhdr = new XSSFWorkbook(sheetPath);
+			sheet = new XSSFWorkbook(sheetPath);
 		} 
 		catch (InvalidFormatException e) 
 		{

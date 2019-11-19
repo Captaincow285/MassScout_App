@@ -26,11 +26,6 @@ public class main {
 		ImageIcon logo = new ImageIcon("C:\\Users\\Captaincow285\\git\\MassScout_App\\MassScout_App\\img\\Logo.png");
 		appSelection.setIconImage(logo.getImage());
 		
-		//Sets image above dropdown
-		JLabel picLogo = new JLabel((Icon) logo);
-		picLogo.setBounds(250, 10, 100, 100);
-		appSelection.getContentPane().add(picLogo);
-		
 		//Dropdown menu creation
 		String[] dropdownText = {"Nothing Selected", "Enter a match into the database", "Create a new Spreadsheet", "Load Spreadsheet", "Analyze Data (WIP)", "Exit Application"};
 		JComboBox option1 = new JComboBox(dropdownText);
@@ -48,6 +43,8 @@ public class main {
 		//Final validate and set Visible
 		appSelection.setVisible(true);
 		
+		//Creates stuff for the coming loop
+		String filePath;
 		
 		while(true)
 		{
@@ -62,6 +59,7 @@ public class main {
 			
 			//Checks for Index
 			int dropdownIndex = option1.getSelectedIndex();
+			appSelection.setVisible(false);
 			
 			if(submit.hasButtonBeenClicked())
 			{
@@ -72,26 +70,37 @@ public class main {
 				}
 				else if(dropdownIndex == 1)
 				{
-					
+					ErrorPopup.errorMessage();
 				}
 				else if(dropdownIndex == 2)
 				{
-					
+					ErrorPopup.errorMessage();
 				}
 				else if(dropdownIndex == 3)
 				{
+					//Loads chosen spreadsheet
 					LoadSheet loading = new LoadSheet();
-					loading.makeSheet(loading.sheetUI());
+					filePath = loading.sheetUI();
+					loading.makeSheet(filePath);
+					
+					//Adds a textfield listing the sheet chosen
+					JLabel sheetName = new JLabel(filePath);
+					sheetName.setBounds(150, 80, 300, 30);
+					appSelection.getContentPane().add(sheetName);
 				}
 				else if(dropdownIndex == 4)
 				{
-					
+					ErrorPopup.errorMessage();
 				}
 				else if(dropdownIndex == 5)
 				{
 					appSelection.dispatchEvent(new WindowEvent(appSelection, WindowEvent.WINDOW_CLOSING));
 				}
 			}
+			
+			appSelection.setVisible(true);
+			
+			
 		}
 	}
 }

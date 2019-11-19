@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-compress-1.19/commons-compress-1.19.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-compress-1.19/commons-compress-1.19-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/commons-collections4-4.4/commons-collections4-4.4-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Captaincow285/git/MassScout_App/MassScout_App/lib/poi-4.1.1/poi-ooxml-schemas-4.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
