@@ -75,7 +75,7 @@ public class LoadSheet
 		return filePath;
 	}
 	
-	public void makeSheet(String filePath)
+	public XSSFWorkbook makeSheet(String filePath)
 	{
 		
 		File sheetPath = new File(filePath);
@@ -92,5 +92,6 @@ public class LoadSheet
 			
 		}
 		
+		return sheet;
 	}
 }

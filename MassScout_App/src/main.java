@@ -1,4 +1,5 @@
 import org.apache.poi.ss.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.hssf.*;
 import javafx.*;
 import javax.swing.*;
@@ -48,6 +49,8 @@ public class main {
 		
 		while(true)
 		{
+			XSSFWorkbook openSheet = new XSSFWorkbook();
+			
 			//Holds application in place before button is pressed
 			while(!submit.hasButtonBeenClicked())
 			{
@@ -59,29 +62,46 @@ public class main {
 			
 			//Checks for Index
 			int dropdownIndex = option1.getSelectedIndex();
-			appSelection.setVisible(false);
+			
 			
 			if(submit.hasButtonBeenClicked())
 			{
 				//Picks index items
 				if(dropdownIndex == 0)
 				{
-					
+					//Do nothing functionality. If something other than comments are here, something is wrong.
 				}
 				else if(dropdownIndex == 1)
 				{
-					ErrorPopup.errorMessage();
+					//Hide original window
+					appSelection.setVisible(false);
+					
+					//Checks for openSheet's values
+					if(openSheet != null)
+					{
+						DataEntry.dataEntry(openSheet);
+					}
+					else
+					{
+						ErrorPopup.errorMessage();
+					}
 				}
 				else if(dropdownIndex == 2)
 				{
+					//Hide original window
+					appSelection.setVisible(false);
 					ErrorPopup.errorMessage();
+					
 				}
 				else if(dropdownIndex == 3)
 				{
+					//Hide original window
+					appSelection.setVisible(false);
+					
 					//Loads chosen spreadsheet
 					LoadSheet loading = new LoadSheet();
 					filePath = loading.sheetUI();
-					loading.makeSheet(filePath);
+					openSheet = loading.makeSheet(filePath);
 					
 					//Adds a textfield listing the sheet chosen
 					JLabel sheetName = new JLabel(filePath);
@@ -90,6 +110,8 @@ public class main {
 				}
 				else if(dropdownIndex == 4)
 				{
+					//Hide original window
+					appSelection.setVisible(false);
 					ErrorPopup.errorMessage();
 				}
 				else if(dropdownIndex == 5)
@@ -99,8 +121,6 @@ public class main {
 			}
 			
 			appSelection.setVisible(true);
-			
-			
 		}
 	}
 }
