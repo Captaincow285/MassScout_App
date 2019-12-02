@@ -77,13 +77,13 @@ public class main {
 					appSelection.setVisible(false);
 					
 					//Checks for openSheet's values
-					if(openSheet != null)
+					if(openSheet == null)
 					{
-						DataEntry.dataEntry(openSheet);
+						ErrorPopup.errorMessage();
 					}
 					else
 					{
-						ErrorPopup.errorMessage();
+						DataEntry.dataEntry(openSheet);
 					}
 				}
 				else if(dropdownIndex == 2)
