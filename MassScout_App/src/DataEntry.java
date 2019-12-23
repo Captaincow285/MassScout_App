@@ -58,7 +58,7 @@ public class DataEntry
 	private static JTextField matchNumBox;
 	private static JTextField matchNumber;
 	private static JTextField allianceSelection;
-	private static JTextField textField_1;
+	private static JTextField allianceSelectionOutput;
 	private static JTextField pageLabel;
 	private static JTextField subLabel;
 	/**
@@ -68,7 +68,7 @@ public class DataEntry
 	{
 		//Creates window
 		JFrame window = new JFrame();
-		window.setSize(1200, 700);
+		window.setSize(1100, 700);
 		window.setLocationRelativeTo(null);
 		
 		//Application Icon
@@ -377,7 +377,7 @@ public class DataEntry
 		window.getContentPane().add(notesOutput);
 		
 		JButton submitB = new JButton("Submit Data");
-		submitB.setBounds(950, 600, 100, 40);
+		submitB.setBounds(900, 600, 150, 40);
 		window.getContentPane().add(submitB);
 		
 		teamNumberBox = new JTextField();
@@ -411,10 +411,10 @@ public class DataEntry
 		window.getContentPane().add(allianceSelection);
 		allianceSelection.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(510, 95, 80, 20);
-		window.getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		allianceSelectionOutput = new JTextField();
+		allianceSelectionOutput.setBounds(510, 95, 80, 20);
+		window.getContentPane().add(allianceSelectionOutput);
+		allianceSelectionOutput.setColumns(10);
 		
 		pageLabel = new JTextField();
 		pageLabel.setFont(new Font("Tahoma", Font.PLAIN, 32));
@@ -437,7 +437,9 @@ public class DataEntry
 		//Final render
 		window.setVisible(true);
 		
+		//Setup for logic within loop
 		int cycle1Index, cycle2Index, autoParkIndex, foundMoveIndex, endFoundMoveIndex, capIndex, endParkIndex;
+		boolean executeCycle1Box = true, executeCycle2Box = true;
 		
 		//Action Listener and Holder
 		SubmitAction submit = new SubmitAction("Submit");
@@ -445,46 +447,64 @@ public class DataEntry
 		{
 			submitB.addActionListener(submit);
 			
+			cycle1Index = cycle1Options.getSelectedIndex();
+			cycle2Index = cycle1Options.getSelectedIndex();
 			
+			JTextField cycle1Instructions = new JTextField();
+			cycle1Instructions.setBounds(50, 285, 200, 20);
+			cycle1Instructions.setText("Cycle time (Seconds, rounded)");
+			cycle1Instructions.setEditable(false);
+			cycle1Instructions.setColumns(10);
+			
+			JTextField cycle1Time = new JTextField();
+			cycle1Time.setBounds(50, 310, 80, 20);
+			cycle1Time.setColumns(10);
+			
+			JTextField cycle2Instructions = new JTextField();
+			cycle2Instructions.setBounds(50, 405, 200, 20);
+			cycle2Instructions.setText("Cycle time (Seconds, rounded)");
+			cycle2Instructions.setEditable(false);
+			cycle2Instructions.setColumns(10);
+			
+			JTextField cycle2Time = new JTextField();
+			cycle2Time.setBounds(50, 430, 80, 20);
+			cycle2Time.setColumns(10);
+			
+			if(cycle1Index == 2)
+			{
+				if(executeCycle1Box)
+				{
+					
+					window.getContentPane().add(cycle1Instructions);
+					window.getContentPane().add(cycle1Time);
+					
+					executeCycle1Box = false;
+				}
+			}
+			else
+			{
+				cycle1Instructions.setVisible(false);
+				cycle1Time.setVisible(false);
+				
+				executeCycle1Box = true;
+			}
+			
+			if(cycle2Index == 2)
+			{
+				if(executeCycle2Box)
+				{
+					window.getContentPane().add(cycle2Instructions);
+					window.getContentPane().add(cycle2Time);
+					
+					executeCycle2Box = false;
+				}
+			}
 		}
+		
+		//Sets up objects for writing data
+		
 		
 		//Closes after everything is done
 		window.dispose();
-		
-		//Put the check dropdown in the add action listener thing
-		/**
-		if actionlistener
-		
-		check all the dropdowns
-			within checks check if already done
-		
-		add actionlistener
-		
-		reset everything
-		
-		render
-		 */
-		
-		
-		
-		//Code needed for later
-		/**
-		if (dropdownIndex == 0)
-		{
-			
-		}
-		else if (dropdownIndex == 1)
-		{
-			
-		}
-		else if (dropdownIndex == 2)
-		{
-			
-		}
-		else
-		{
-			
-		}
-		 */
 	}
 }
