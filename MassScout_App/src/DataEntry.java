@@ -2,6 +2,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.awt.Font;
@@ -48,9 +49,11 @@ public class DataEntry
 	private static JTextField tableInput10;
 	private static JTextField endgameFields;
 	private static JTextField foundationMove;
+	@SuppressWarnings("rawtypes")
 	private static JComboBox foundationSelection;
 	private static JTextField foundationMoved;
 	private static JTextField buildZone;
+	@SuppressWarnings("rawtypes")
 	private static JComboBox parkSelection;
 	private static JTextField notesField;
 	private static JTextField teamNumberBox;
@@ -64,6 +67,7 @@ public class DataEntry
 	/**
 	 * @wbp.parser.entryPoint
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	public static void dataEntry(XSSFWorkbook sheet)
 	{
 		//Creates window
@@ -96,6 +100,7 @@ public class DataEntry
 		JComboBox cycle1Options = new JComboBox(cycleOptions);
 		cycle1Options.setBounds(50, 260, 150, 20);
 		window.getContentPane().add(cycle1Options);
+		@SuppressWarnings("unused")
 		int dropdownIndex1 = cycle1Options.getSelectedIndex();
 		
 		JTextField cycle2Text = new JTextField();
@@ -381,7 +386,7 @@ public class DataEntry
 		window.getContentPane().add(submitB);
 		
 		teamNumberBox = new JTextField();
-		teamNumberBox.setText("Team Number (5-digit integer)");
+		teamNumberBox.setText("Team Number");
 		teamNumberBox.setEditable(false);
 		teamNumberBox.setBounds(400, 10, 200, 20);
 		window.getContentPane().add(teamNumberBox);
@@ -438,6 +443,7 @@ public class DataEntry
 		window.setVisible(true);
 		
 		//Setup for logic within loop
+		@SuppressWarnings("unused")
 		int cycle1Index, cycle2Index, autoParkIndex, foundMoveIndex, endFoundMoveIndex, capIndex, endParkIndex;
 		boolean executeCycle1Box = true, executeCycle2Box = true;
 		
@@ -501,7 +507,11 @@ public class DataEntry
 			}
 		}
 		
-		//Sets up objects for writing data
+		//Pull out team name and reference attached sheet
+		@SuppressWarnings("unused")
+		XSSFSheet workArea = sheet.getSheetAt(sheet.getSheetIndex(teamNumberBox.getText()));
+		
+		//Begins input data
 		
 		
 		//Closes after everything is done
