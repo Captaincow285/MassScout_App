@@ -1,6 +1,5 @@
 # MassScout_App
-The application for the MassScout Alliance's scouting dataflow.
+This application is now defunct. Please use the browser extension created by Michael from FTC 4410 instead. You can find it here:
+https://github.com/broad-well/massscout-extension
 
-This is the front-end data entry and spreadsheet creation program for the MassScout Alliance. It will be part of an integrated system for storing and handling scouting data collected by 5 Massachusetts teams. It will be set to deploy on November 23rd.
-
-Contact Will F. on the New England FTC Discord server for more details!
+If you're interested in joining the MassScout Alliance, please contact Will on FTC 7571 at dhsftcrobotics@gmail.com.
